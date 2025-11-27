@@ -17,13 +17,10 @@ import LoginSignupPopup from './components/LoginSignupPopup';
 import './App.css';
 
 function App() {
-  // replace with real auth context or prop
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [initialMode, setInitialMode] = useState('login');
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-  console.log('APP auth state:', isAuthenticated);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -63,7 +60,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/Ushakiran-Front">
       <div className="App">
         <Navbar
           isAuthenticated={isAuthenticated}
